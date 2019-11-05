@@ -26,7 +26,7 @@
 //document.getElementById('twelve').addEventListener("click",open);
 
 
-var photoIndex=-1;
+var photoIndex=(-1);
 
 var photoArray =
 [document.getElementById("one"),
@@ -52,21 +52,22 @@ document.getElementById('next-btn').addEventListener("click",next);
 function open(){
   if (photoIndex=-1){
   photoIndex=this.getAttribute("data-index");
+  }
   document.getElementById('photo-big').src=photoArray[photoIndex].src;
   document.getElementById('zoom').style.display="block";
   document.getElementById('main').style.display="none";
-  }
-  function prev(){
-    photoIndex-=1;
-    document.getElementById('photo-big').src=photoArray[photoIndex].src;
-  }
-  function next(){
-    photoIndex+=1;
-    document.getElementById('photo-big').src=photoArray[photoIndex].src;
-  }
 }
 
 function close(){
   document.getElementById('main').style.display="grid";
   document.getElementById('zoom').style.display="none";
+}
+
+function prev(){
+  photoIndex-=1;
+  document.getElementById('photo-big').src=photoArray[photoIndex].src;
+}
+function next(){
+  photoIndex+=1;
+  document.getElementById('photo-big').src=photoArray[photoIndex].src;
 }
